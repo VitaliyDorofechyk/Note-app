@@ -45,7 +45,7 @@ function createNewNote (text, posX, posY, index) {
     if (text !== 'New text is here') {
         textarea.value = text;
     }
-    textarea.maxLength = '240';
+    textarea.maxLength = '200';
     
     textarea.addEventListener('keypress', (event) => {
         if (event.key === 'Enter' && event.shiftKey === false) {

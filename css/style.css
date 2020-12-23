@@ -24,7 +24,7 @@
 }
 
 .note {
-    font-size: 16px;
+    font-size: 14px;
     vertical-align: center;
     position: absolute;
     width: 200px;
@@ -37,7 +37,7 @@
   }
 
   .noteHead {
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
     padding: 5px;
     display: block;
