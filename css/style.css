@@ -40,7 +40,8 @@
     font-size: 16px;
     text-align: center;
     padding: 5px;
-    display: block ;
+    display: block;
+    font-family: 'Roboto Slab', serif;
   }
 
   .note textarea {
@@ -49,6 +50,8 @@
     width: 90%;
     height: 75%;
     display: none;
+    background-color: rgb(247, 247, 181);
+    font-family: 'Roboto Slab', serif;
   }
 
   .note .btnDel {
