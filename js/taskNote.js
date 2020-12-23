@@ -107,15 +107,15 @@ function createNewNote (text, posX, posY, index) {
         window.addEventListener('mousemove', moveAt);
         //pageX and pageY место где находится наша мышка
         function moveAt(event) {
-            let pX = event.pageX;
+        	let pX = event.pageX;
 			let pY = event.pageY;
 			if (pX - shiftX < 0) {
-                notes[index].posX = 0;
+				notes[index].posX = 0;
 				if (pY - shiftY < 0) {
 					notes[index].posY = 0;
                     
 				} else if ((pY - shiftY + divElHeight) > noteApp.offsetHeight) {
-                    notes[index].posY = `${noteApp.offsetHeight - divElHeight}px`;
+                  	notes[index].posY = `${noteApp.offsetHeight - divElHeight}px`;
                     
 				} else {
                     notes[index].posY = `${pY - shiftY}px`;
