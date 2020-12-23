@@ -107,50 +107,50 @@ function createNewNote (text, posX, posY, index) {
         window.addEventListener('mousemove', moveAt);
         //pageX and pageY место где находится наша мышка
         function moveAt(event) {
-            let pX = event.pageX;
-			let pY = event.pageY;
-			if (pX - shiftX < 0) {
-                notes[index].posX = 0;
-				if (pY - shiftY < 0) {
-					notes[index].posY = 0;
+        	let pX = event.pageX;
+		let pY = event.pageY;
+		if (pX - shiftX < 0) {
+                	notes[index].posX = 0;
+			if (pY - shiftY < 0) {
+				notes[index].posY = 0;
                     
-				} else if ((pY - shiftY + divElHeight) > noteApp.offsetHeight) {
-                    notes[index].posY = `${noteApp.offsetHeight - divElHeight}px`;
-                    
-				} else {
-                    notes[index].posY = `${pY - shiftY}px`;
-                }
-                
-			} else if (pY - shiftY < 0) {
-                notes[index].posY = 0;
-                
-				if (pX - shiftX < 0) {
-                    notes[index].posX = 0;
-                    
-				} else if ((pX - shiftX + divElWidth) > noteApp.offsetWidth) {
-                    notes[index].posX = `${noteApp.offsetWidth - divElWidth}px`;
-                    
-				} else {
-                    notes[index].posX = `${pX - shiftX}px`;
-                }
-                
-			} else if ((pX - shiftX + divElWidth) > noteApp.offsetWidth) {
-                notes[index].posX = `${noteApp.offsetWidth - divElWidth}px`;
-                
-				if ((pY - shiftY + divElHeight) > noteApp.offsetHeight) {
-                    notes[index].posY = `${noteApp.offsetHeight - divElHeight}px`;
-                    
-				} else {
-                    notes[index].posY = `${pY - shiftY}px`;
-                }
-                
 			} else if ((pY - shiftY + divElHeight) > noteApp.offsetHeight) {
-                notes[index].posY = `${noteApp.offsetHeight - divElHeight}px`;
-				notes[index].posX = `${pX - shiftX}px`;
+                  		notes[index].posY = `${noteApp.offsetHeight - divElHeight}px`;
+                    
 			} else {
-                notes[index].posX = `${pX - shiftX}px`;
-				notes[index].posY = `${pY - shiftY}px`;
-			}
+                    		notes[index].posY = `${pY - shiftY}px`;
+                	}
+                
+		} else if (pY - shiftY < 0) {
+                	notes[index].posY = 0;
+                
+			if (pX - shiftX < 0) {
+                    		notes[index].posX = 0;
+                    
+			} else if ((pX - shiftX + divElWidth) > noteApp.offsetWidth) {
+                    		notes[index].posX = `${noteApp.offsetWidth - divElWidth}px`;
+                    
+			} else {
+                    		notes[index].posX = `${pX - shiftX}px`;
+                	}
+                
+		} else if ((pX - shiftX + divElWidth) > noteApp.offsetWidth) {
+                	notes[index].posX = `${noteApp.offsetWidth - divElWidth}px`;
+                
+			if ((pY - shiftY + divElHeight) > noteApp.offsetHeight) {
+                    		notes[index].posY = `${noteApp.offsetHeight - divElHeight}px`;
+                    
+			} else {
+                    		notes[index].posY = `${pY - shiftY}px`;
+                	}
+                
+		} else if ((pY - shiftY + divElHeight) > noteApp.offsetHeight) {
+                	notes[index].posY = `${noteApp.offsetHeight - divElHeight}px`;
+			notes[index].posX = `${pX - shiftX}px`;
+		} else {
+                	notes[index].posX = `${pX - shiftX}px`;
+			notes[index].posY = `${pY - shiftY}px`;
+		}
         createHtml();
         };
         window.addEventListener('mouseup', () => {
