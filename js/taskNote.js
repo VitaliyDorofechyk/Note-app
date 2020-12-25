@@ -5,15 +5,17 @@ const btnNewNote = document.querySelector('.newNote');
 btnNewNote.addEventListener('click', createNote);
 const notes = [];
 
-function Note(text = 'New text is here', posX = '30px', posY = '30px') {
+class Note {
+constructor (text = 'New text is here', posX = '30px', posY = '30px') {
     this.text = text;
     this.posX = posX;
     this.posY = posY;
+    }
 }
 
 function createNote() {
-notes.push(new Note());
-createHtml();
+    notes.push(new Note());
+    createHtml();
 };
 
 function createHtml () {
